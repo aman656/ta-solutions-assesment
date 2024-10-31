@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+const apiUrl = process.env.REACT_APP_API_BASE_URL
 
 interface ConversionRecord {
   id: number;
@@ -34,7 +35,7 @@ const App: React.FC = () => {
   const handleConvert = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:9090/api/convert', {
+      const response = await axios.get(`${apiUrl}/api/convert`, {
         params: { from: fromCurrency, to: toCurrency, amount }
       });
       const { convertedAmount, conversionRate } = response.data;
