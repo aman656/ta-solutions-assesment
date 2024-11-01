@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-const apiUrl = process.env.REACT_APP_API_BASE_URL
+// const apiUrl = process.env.REACT_APP_API_BASE_URL
+const apiUrl = "https://ta-solutions-assesment.vercel.app"
 
 interface ConversionRecord {
   id: number;
